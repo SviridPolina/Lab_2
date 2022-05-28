@@ -1,0 +1,110 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage[utf8x]{inputenc}   
+\usepackage[russian]{babel}
+\usepackage[a4paper, top=2cm, bottom=2cm, left=3cm, right=3cm, marginparwidth=1.75cm]{geometry} 
+
+\title{Лабораторная работа №1}
+\author{Халина Ирина}
+
+
+\makeatletter
+\renewcommand{\@maketitle}{
+	\begin{center}
+		\begin{huge}
+			\par\textbf{\@title}
+		\end{huge}
+		\vspace{0.3cm}
+		\begin{large}
+		\par\textit{\@author}
+		\end{large}
+	\end{center}
+}
+\makeatother
+
+
+\begin{document}
+	\par\maketitle
+	
+	
+	\subsection*{№169}
+	\par
+	Найдя путем подбора частное решение, привести уравнение Риккати $xy^\prime-(2x+1)y+y^2=-x^2$ к уравнению Бернулли и решить его.
+	\vspace{0.2cm}
+	\par
+	\textit{Решение}. Подставим частное решение в виде $y_1(x)=ax+b$ в уравнение. Из полученного тождества составим систему уравнений относительно $a$ и $b$ и, решив ее, получим $a=1, b=0$ или $a=b=1$. Положим $a=1, b=0$, тогда $y_1(x)=x$. Произведя замену $y=x+\frac{1}{z}$, получим уравнение:
+	$$-\frac{1}{z^2}(xz^\prime+z-1)=0.$$
+	Тогда $z=1-xC$ и $y=x+\frac{1}{1-xC}$.\\
+	Ответ: $y=x+\frac{1}{1-xC}$.
+	\vspace{0.5cm}
+	
+	
+	\subsection*{№170}
+	\par
+	Найдя путем подбора частное решение, привести уравнение Риккати $y^\prime-2xy+y^2=5-x^2$ к уравнению Бернулли и решить его.
+	\vspace{0.2cm}
+	\par
+	\textit{Решение}. Подставим частное решение в виде $y_1(x)=ax+b$ в уравнение. Из полученного тождества составим систему уравнений относительно $a$ и $b$ и, решив ее, получим $a=1, b=2$ или $a=1, b=-2$. Положим $a=1, b=2$, тогда $y_1(x)=x+2$. Произведя замену $y=x+2+\frac{1}{z}$ получим уравнение:
+	$$\frac{1}{z^2}(z^\prime+4z+1)=0.$$
+	Тогда $z=\frac{Ce^{-4x}-1}{4}$ и $y=x+2+\frac{4}{Ce^{-4x}-1}$.\\	
+	Ответ: $y=x+2+\frac{4}{Ce^{-4x}-1}$.
+	\vspace{0.5cm}
+	
+	
+	\subsection*{№171}
+	\par
+	Найдя путем подбора частное решение, привести уравнение Риккати $y^\prime+2ye^{x}-y^2=e^{2x}+e^{x}$ к уравнению Бернулли и решить его.
+	\vspace{0.2cm}
+	\par
+	\textit{Решение}. Подставим частное решение в виде $y_1(x)=e^x+a$ в уравнение и получим $a=0$, тогда $y_1(x)=e^x$. Произведя замену $y=e^x+z$ получим уравнение:
+	$$z^\prime-z^2=0.$$
+	Тогда $z=-\frac{1}{x+C}$ и $y=e^x-\frac{1}{x+C}$.\\
+	Ответ: $y=e^x-\frac{1}{x+C}$.
+	\vspace{0.5cm}
+	
+	
+	\subsection*{№179}
+	\par
+	Пусть в уравнении $xy^\prime+ay=f(x)$ имеем $a=const>0, f(x) \longrightarrow b$ при $x \longrightarrow 0$. Показать, что только одно решение остается ограниченным при $x \longrightarrow 0$, и найти предел этого решения при $x \longrightarrow 0$.
+	\vspace{0.2cm}
+	\par
+	\textit{Решение}. Пусть общее решение уравнения:
+	$$y=\frac{C}{|x|^{a}}+\frac{b}{a}+\frac{1}{|x|^{a}}\int_0^x \varepsilon (t)|t|^{a-1}d(|t|),$$
+	где $d(|t|)=sgntdt$, $t \neq 0$, $ \varepsilon (t) \longrightarrow 0$ при $t \longrightarrow 0$. Тогда оценим 
+	$$\frac{1}{|x|^{a}}|\int_0^x \varepsilon (t)|t|^{a-1}d(|t|)| \leq \frac{1}{a} \sup_{0 \leq t \leq x} |\varepsilon (t)| \longrightarrow 0, x \longrightarrow 0.$$
+	Следовательно, $\lim_{x \to 0}y$ существует только при $C=0$ и равен $\frac{b}{a}$. 
+	
+	
+	\subsection*{№180}
+	\par
+	Пусть в уравнении $xy^\prime+ay=f(x)$ имеем $a=const<0, f(x) \longrightarrow b$ при $x \longrightarrow 0$. Показать, что все решения этого уравнения имет один и тот же конечный предел при $x \longrightarrow 0$ и найти его.
+	\vspace{0.2cm}
+	\par
+	\textit{Решение}. Общее решение уравнения:
+	$$y=\frac{C}{|x|^{a}}+\frac{b}{a}+\frac{1}{|x|^{a}}\int \varepsilon (x)|x|^{a-1}d(|x|).$$
+	Если $\int \varepsilon(x)|x|^{a-1}d(|x|)$ - ограничен, то
+	$$\forall \; C \; \lim_{x\to 0}  y(x) = \frac{b}{a}$$
+	Если $\int \varepsilon(x)|x|^{a-1}d(|x|)$ - не ограничен, то применим правило Лопиталя:
+	$$\lim_{x \to 0} \frac{\int \varepsilon (x)|x|^{a-1}d(|x|)}{|x|^a} = \lim_{x \to 0} \frac{\varepsilon (x)|x|^{a-1}}{a|x|^{a-1}} = 0$$
+	Таким образом,
+	$$\lim_{x\to 0} y(x) = \frac{b}{a}, \; \forall \; C$$ 
+	
+	
+	\subsection*{№181}
+	\par
+	Показать, что уравнение $\frac{dx}{dt}+x=f(t)$, где $|f(t)| \leq M$ при $-\inf < t < +\inf$, имеет одно решение, ограниченное при $-\inf < t < +\inf$, и найти его. Показать, что найденное решение периодическое, если функция $f(t)$ периодическая.
+	\vspace{0.2cm}
+	\par
+	\textit{Решение}. Представим общее решение заданного уравнения в виде:
+	$$x(t)=Сe^{-t}+e^{-t}\int_{-\infty}^t f(\tau)e^{\tau}d\tau$$
+	Такое представление возможно в силу того, что $\left|\int_{-\infty}^t f(\tau)e^{\tau}d\tau \right| \leq Me^t,$ и, как следствие, несобственный интеграл сходится. 
+	Из неравенства также следует, что функция $e^{-t}\int_{-\infty}^t f(\tau)e^{\tau}d\tau$ ограничена числом M $ \forall t \in (-\infty,+\infty)$. Таким образом необходимым и достаточным условием ограниченности функции $x$ является равенство $C=0$. Искомое решение имеет вид:
+	$$x(t)=e^{-t}\int_{-\infty}^t f(\tau)e^{\tau}d\tau$$
+	Пусть, далее:
+	$$ \forall \tau \in (-\infty,+\infty)  f(\tau +T)=f(\tau),\; T>0$$
+	Тогда из искомого решения находим:
+	$$x(t) = e^{-t} \int^t_{-\infty} f(\tau + T)e^\tau d\tau = e^{-(t+T)} \int^{t+T}_{-\infty} f({\tau}_1)e^{{\tau}_1}d{\tau}_1 = x(t+T),$$
+	где $\tau_1=\tau+T$. Следовательно, x - периодическая функция.
+\end{document}
