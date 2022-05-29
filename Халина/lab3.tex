@@ -1,0 +1,448 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage[utf8x]{inputenc}   
+\usepackage[russian]{babel}
+\usepackage[a4paper, top=2cm, bottom=2cm, left=3cm, right=3cm, marginparwidth=1.75cm]{geometry} 
+
+\title{Лабораторная работа №2}
+\author{Халина Ирина}
+
+
+\makeatletter
+\renewcommand{\@maketitle}{
+	\begin{center}
+		\begin{huge}
+			\par\textbf{\@title}
+		\end{huge}
+		\vspace{0.3cm}
+		\begin{large}
+		\par\textit{\@author}
+		\end{large}
+	\end{center}
+}
+\makeatother
+
+\begin{document}
+	\par\maketitle
+	
+	\begin{center}
+	\subsection*{Вариант 1}
+	\end{center}
+	
+	\subsection*{Задание 1а}
+	
+	\par
+	Проинтегрировать уравнение Лагранжа $2xy^\prime - y = \ln{y^\prime}$.
+	
+	\vspace{0.2cm}
+	\par
+	\textit{Решение}. 
+	
+	\par
+	\begin{equation*}
+    	y = 2xy^\prime - \ln{y^\prime}.
+	\end{equation*}
+	
+	\par
+	Используя замену $\dfrac{dy}{dx} = p$ и дифференцируя, получим:
+	
+	\begin{equation}
+    	y = 2xp - \ln{p}, \label{eq:1}
+	\end{equation}
+	\begin{equation*}
+    	pdx = 2xdp + 2pdx - \frac{dp}{p},
+	\end{equation*}
+	\begin{equation}
+    	\frac{dx}{dp} + \dfrac{2}{p} x = \dfrac{1}{p^2}.\label{eq:2}
+	\end{equation}
+	
+	\par
+	Уравнение (\ref{eq:2}) линейно относительно $x$. Применим метод Лагранжа:
+	
+	\begin{equation*}
+    	\frac{dx}{dp} + \dfrac{2}{p} x = 0,
+	\end{equation*}
+	\begin{equation*}
+    	\frac{dx}{x} = -2 \frac{dp}{p},
+	\end{equation*}
+	\begin{equation*}
+    	\ln{x} = \ln{Cp^{-2}},
+	\end{equation*}
+	\begin{equation*}
+    	x = Cp^{-2}.
+	\end{equation*}
+	
+	\par
+	Положим $C = C(p)$, тогда:
+	
+	\begin{equation}
+    	x = C(p)p^{-2},\label{eq:3} 
+	\end{equation}
+	\begin{equation*}
+		x^\prime = C^\prime(p)p^{-2} - 2C(p)p^{-3}.
+	\end{equation*}
+	
+	\par
+	Подставляя $x$ и $x^\prime$ в уравнение (\ref{eq:2}), найдем $C(p)$: 
+	
+	\begin{equation*}
+    	C^\prime(p)p^{-2} = p^{-2},
+	\end{equation*}
+	\begin{equation*}
+		C(p) = p + C_1.
+	\end{equation*}
+	
+	\par
+	Подставим $C(p)$ в уравнение (\ref{eq:3}), а $x$ в уравнение  (\ref{eq:1}):
+	\begin{equation*}
+		x = \dfrac{1}{p} + \dfrac{C_1}{p^2},
+	\end{equation*}
+	\begin{equation*}
+		y = 2 + \dfrac{2C_1}{p} - \ln{p}.
+	\end{equation*}
+	
+	\par\noindent
+	Ответ: $x = \dfrac{1}{p} + \dfrac{C_1}{p^2}$, $y = 2 + \dfrac{2C_1}{p} - \ln{p}$.
+	
+	
+	\subsection*{Задание 1б}
+		
+	Проинтегрировать уравнение Клеро $y = xy^\prime - y^{\prime 2}$.
+	
+	\vspace{0.2cm}
+	\par
+	\textit{Решение}. 
+	
+	\par
+	Используя замену $\dfrac{dy}{dx} = p$ и дифференцируя, получим:
+	
+	\begin{equation*}
+		y = xp - p^2,
+	\end{equation*}
+	\begin{equation*}
+		dp(x - 2p) = 0.
+	\end{equation*}
+	
+	\par
+	Приравнивая $dp$ к нулю получим, что $p = C \Rightarrow y = Cx - C^2$. Приравнивая $x - 2p$ к нулю и исключая $p$ получим особое решение $y = \frac{1}{4} x^2$.
+	
+	\par\noindent	
+	Ответ: $y = Cx - C^2$, $y = \frac{1}{4} x^2$.
+	
+	
+	\subsection*{Задание 2}
+	
+	\par
+	Проинтегрировать уравнение $y^\prime y^{\prime\prime\prime} - 3(y^{\prime\prime})^2 = 0$.
+	
+	\vspace{0.2cm}
+	\par
+	\textit{Решение}. 
+	
+	\par
+	Используя замену $y^\prime = z$, получим $zz^{\prime\prime} - 3(z^\prime)^2 = 0$. В полученное уравнение подставим замену $z^\prime = p$, $z^{\prime\prime} = p^\prime p$, тогда:
+	
+	\begin{equation*}
+    	zp^\prime - 3p = 0, \quad p \neq 0,
+	\end{equation*}
+	\begin{equation*}
+    	\dfrac{dp}{p} = \dfrac{3dz}{z},
+	\end{equation*}
+	\begin{equation*}
+    	\ln{p} = \ln{C_1z^3},
+	\end{equation*}
+	\begin{equation*}
+    	p = C_1z^3.
+	\end{equation*}
+	
+	\par
+	Приравнивая $z^\prime$ к $p$, получим:
+	
+	\begin{equation*}
+    	\dfrac{dz}{dx} = C_1z^3,
+	\end{equation*}
+	\begin{equation*}
+    	\dfrac{dz}{z^3} = C_1dx,
+	\end{equation*}
+	\begin{equation*}
+    	\dfrac{1}{z^2} = C_1x + C_2,
+	\end{equation*}
+	\begin{equation*}
+    	|z| = \dfrac{1}{\sqrt{C_1x + C_2}}.
+	\end{equation*}
+	
+	\par
+	Делая обратную замену и интегрируя, получим:
+	
+	\begin{equation*}
+    	\pm y = \dfrac{2\sqrt{C_1x + C_2}}{C_1} + C_2.
+	\end{equation*}
+	
+	\par
+	Рассмотрим случай $p = 0$:
+	
+	\begin{equation*}
+    	z^\prime = 0 \Rightarrow z = C_ 1 \Rightarrow y^\prime = C_1 \Rightarrow y = C_1x + C_2.
+	\end{equation*}
+	
+	\par\noindent
+	Ответ: $\pm y = \dfrac{2\sqrt{C_1x + C_2}}{C_1} + C_2$, $y = C_1x + C_2$.
+	
+	
+	\subsection*{Задание 3}
+	
+	\par
+	Понизить порядок уравнения $2x^3 y^{\prime\prime\prime} - y^{\prime\prime} x^2 = (y^{\prime\prime})^3$ и указать тип и метод интегрирования полученного уравнения.
+	
+	\vspace{0.2cm}
+	\par
+	\textit{Решение}.
+	
+	\par
+	Используя замену $y^{\prime\prime} = p$, получим:
+	
+	\begin{equation*}
+    	2x^3 p^\prime - px^2 = p^3,
+	\end{equation*}
+	\begin{equation*}
+    	2x^3 \dfrac{dp}{dx} - px^2 = p^3,
+	\end{equation*}
+	\begin{equation*}
+    	\dfrac{dp}{dx} - \frac{p}{2x} = \frac{p^3}{2x^3}.
+	\end{equation*}
+	
+	\par\noindent
+	Ответ: тип - уравнение Бернулли, метод - замена $z = \frac{1}{p^2}$.
+	
+	\subsection*{Задание 4}
+	
+	\par
+	Проинтегрировать уравнение в точных производных $y^{\prime\prime} + \dfrac{y^\prime}{x} - \dfrac{y}{x^2} = 3x^2$.
+	
+	\vspace{0.2cm}
+	\par
+	\textit{Решение}.
+	
+	\par
+	Преобразуя уравнение, получим линейное уравнение относительно $y$. Решим с помощью метода Лагранжа:	
+	
+	\begin{equation*}
+    	y^{\prime\prime} = (\dfrac{y}{x} +x^3)^\prime,
+	\end{equation*}
+	\begin{equation*}
+    	y^\prime = \dfrac{y}{x} + x^3 + C_1,
+	\end{equation*}
+	\begin{equation*}
+    	\dfrac{dy}{y} = \dfrac{dx}{x} \Rightarrow \ln{y} = \ln{\dfrac{C_2}{x}} \Rightarrow y = \dfrac{C_2}{x},
+	\end{equation*}
+	\begin{equation*}
+    	C_2^\prime = x^4 + C_1x \Rightarrow  C_2 = \dfrac{x^5}{5} + \dfrac{C_1x^2}{2} + C_3,
+	\end{equation*}
+	\begin{equation*}
+    	y = \dfrac{x^4}{5} + C_1x + \dfrac{C_3}{x}.
+	\end{equation*}
+
+	\par\noindent
+	Ответ: $y = \dfrac{x^4}{5} + C_1x + \frac{C_3}{x}$.
+	
+	
+	\begin{center}
+	\subsection*{Вариант 2}
+	\end{center}
+	
+	\subsection*{Задание 1а}
+	
+	\par
+	Проинтегрировать уравнение Лагранжа $2xy^\prime - y = \cos{y^\prime}$.
+	
+	\vspace{0.2cm}
+	\par
+	\textit{Решение}. 
+	
+	\par
+	\begin{equation*}
+    	y = 2xy^\prime - \cos{y^\prime}.
+	\end{equation*}
+	
+	\par
+	Используя замену $\dfrac{dy}{dx} = p$ и дифференцируя, получим:
+	
+	\begin{equation}
+    	y = 2xp - \cos{p}, \label{eq:4}
+	\end{equation}
+	\begin{equation*}
+    	pdx = 2xdp + 2pdx + \sin{p}dp,
+	\end{equation*}
+	\begin{equation}
+    	\frac{dx}{dp} + \dfrac{2}{p} x = - \dfrac{\sin{p}}{p}.\label{eq:5}
+	\end{equation}
+	
+	\par
+	Уравнение (\ref{eq:5}) линейно относительно $x$. Применим метод Лагранжа:
+	
+	\begin{equation*}
+    	\frac{dx}{dp} + \dfrac{2}{p} x = 0,
+	\end{equation*}
+	\begin{equation*}
+    	\frac{dx}{x} = -2 \frac{dp}{p},
+	\end{equation*}
+	\begin{equation*}
+    	\ln{x} = \ln{Cp^{-2}},
+	\end{equation*}
+	\begin{equation*}
+    	x = Cp^{-2}.
+	\end{equation*}
+	
+	\par
+	Положим $C = C(p)$, тогда:
+	
+	\begin{equation}
+    	x = C(p)p^{-2},\label{eq:6} 
+	\end{equation}
+	\begin{equation*}
+		x^\prime = C^\prime(p)p^{-2} - 2C(p)p^{-3}.
+	\end{equation*}
+	
+	\par
+	Подставляя $x$ и $x^\prime$ в уравнение (\ref{eq:2}), найдем $C(p)$: 
+	
+	\begin{equation*}
+    	C^\prime(p)p^{-2} = \dfrac{\sin{p}}{p},
+	\end{equation*}
+	\begin{equation*}
+		C(p) = \sin{p} - p \cos{p} + C_1.
+	\end{equation*}
+	
+	\par
+	Подставим $C(p)$ в уравнение (\ref{eq:6}), а $x$ в уравнение  (\ref{eq:4}):
+	\begin{equation*}
+		x = \dfrac{\sin{p}}{p^2} - \dfrac{\cos{p}}{p} + \dfrac{C_1}{p^2},
+	\end{equation*}
+	\begin{equation*}
+		y = 2\dfrac{\sin{p}}{p} - 3\cos{p} + \dfrac{2C_1}{p}.
+	\end{equation*}
+	
+	\par\noindent
+	Ответ: $x = \dfrac{\sin{p}}{p^2} - \dfrac{\cos{p}}{p} + \dfrac{C_1}{p^2}$, $y = 2\dfrac{\sin{p}}{p} - 3\cos{p} + \dfrac{2C_1}{p}$.
+	
+	
+	\subsection*{Задание 1б}
+		
+	Проинтегрировать уравнение Клеро $y = xy^\prime - (2 + y^{\prime 2})$.
+	
+	\vspace{0.2cm}
+	\par
+	\textit{Решение}. 
+	
+	\par
+	Используя замену $\dfrac{dy}{dx} = p$ и дифференцируя, получим:
+	
+	\begin{equation*}
+		y = xp - (2 + p^2),
+	\end{equation*}
+	\begin{equation*}
+		dp(x - 2p) = 0.
+	\end{equation*}
+	
+	\par
+	Приравнивая $dp$ к нулю получим, что $p = C \Rightarrow y = Cx - C^2$. Приравнивая $x - 2p$ к нулю и исключая $p$ получим особое решение $y = \frac{1}{4} x^2 + C$.
+	
+	\par\noindent	
+	Ответ: $y = Cx - C^2$, $y = \frac{1}{4} x^2 + C$.
+
+	
+	\subsection*{Задание 2}
+	
+	Проинтегрировать уравнение $2yy^{\prime\prime} + y^{\prime 2} = 0$.
+	
+	\vspace{0.2cm}
+	\par
+	\textit{Решение}. 
+	
+	\par
+	Используя замену $y^\prime = p$, получим $2yp^\prime p + p^2 = 0$. Tогда:
+	
+	\begin{equation*}
+    	2yp^\prime + p = 0, \quad p \neq 0,
+	\end{equation*}
+	\begin{equation*}
+    	\dfrac{dp}{p} = -\dfrac{dy}{2y},
+	\end{equation*}
+	\begin{equation*}
+    	\ln{p} = \ln{C_1y^{-1/2}},
+	\end{equation*}
+	\begin{equation*}
+    	p = C_1y^{-1/2}.
+	\end{equation*}
+	
+	\par
+	Приравнивая $y^\prime$ к $p$, получим:
+	
+	\begin{equation*}
+    	\dfrac{dy}{dx} = C_1y^{-1/2},
+	\end{equation*}
+	\begin{equation*}
+    	\dfrac{dy}{y^{-1/2}} = C_1dx,
+	\end{equation*}
+	\begin{equation*}
+    	y = \sqrt[3]{(C_1x + C_2)^2}.
+	\end{equation*}
+	
+	Рассмотрим случай $p = 0$:
+	
+	\begin{equation*}
+    	y^\prime = 0 \Rightarrow y = C_ 1.
+	\end{equation*}
+	
+	\par\noindent
+	Ответ: $y = \sqrt[3]{(C_1x + C_2)^2}$, $y = C_ 1$.
+	
+	
+ 	\subsection*{Задание 3}
+	\par
+	Понизить порядок уравнения $(y^{\prime\prime})^2 + y^\prime = xy^{\prime\prime}$ и указать тип и метод интегрирования полученного уравнения.
+	
+	\vspace{0.2cm}
+	\par
+	\textit{Решение}.
+	
+	\par
+	Используя замену $y^{\prime} = p$, получим:
+	
+	\begin{equation*}
+    	p^{\prime 2} + p = xp^\prime,
+	\end{equation*}
+	\begin{equation*}
+    	p = xp^\prime - p^{\prime 2}.
+	\end{equation*}
+	
+	\par\noindent
+	Ответ: тип - уравнение Клеро, метод - замена $p^\prime = t$.
+	
+	
+	\subsection*{Задание 4}
+	\par
+	Проинтегрировать уравнение в точных производных $yy^{\prime\prime} + y^{\prime 2} = 1$.
+	
+	\vspace{0.2cm}
+	\par
+	\textit{Решение}.
+	
+	\par
+	Преобразуя уравнение, получим и решим уравнение с разделяющимися переменными:	
+	
+	\begin{equation*}
+    	yy^\prime = x + C_1,
+	\end{equation*}
+	\begin{equation*}
+    	ydy = (x + C_1)dx,
+	\end{equation*}
+	\begin{equation*}
+    	y^2 = x^2 + C_1x + C_2.
+	\end{equation*}
+
+	\par\noindent
+	Ответ: $y^2 = x^2 + C_1x + C_2$.
+\end{document}
