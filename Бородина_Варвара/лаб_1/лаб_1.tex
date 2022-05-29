@@ -1,0 +1,303 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+\title{Дифференциальные уравненя}
+\author{Варвара Бородина}
+\date{Март 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{№169} 
+$$xy^\prime - (2x + 1)y + y^2 = -x^2$$
+Частное решение будет имеет вид: 
+$$y_1(x) = ax + b$$
+Подставим его в исходное уравнение:
+$$ax - (2x + 1)(ax + b) + (ax + b)^2 = -x^2$$
+$$ax - 2ax^2 - abx - ax - b + a^2x^2 + 2axb + b^2 = -x^2$$
+Получаем систему:
+$$ \begin{cases}
+   a^2 - 2a = -1\\
+   2ab - 2b = 0\\
+   b^2 - b = 0\\
+ \end{cases}$$
+Система имеет два решения:
+$$ \begin{cases}
+   a = 1, b = 0 \\
+   a = 1, b = 1
+ \end{cases}$$
+Пусть $a = 1, b = 0$. Тогда $y_1(x) = x$ - частное решение. Сделаем замену:
+$$y = x + \frac{1}{z} \eqno(1)$$
+Подставим замену в исходное уравнение:
+$$x\left(1 - \frac{z^\prime}{z^2} \right) - (2x + 1)\left(x + \frac{1}{z}\right) + \left(x + \frac{1}{z}\right)^2 = -x^2$$
+$$x - \frac{xz^\prime}{z^2} - 2x^2 - \frac{2x}{z} - x - \frac{1}{z} + x^2 + \frac{2x}{z} + \frac{1}{z^2} = -x^2$$
+Получаем уравнение:
+$$xz' + z - 1 = 0$$
+Решаем уравнение методом Лагранжа:
+$$xz' + z = 0$$
+$$z' + \frac{z}{x} = 0$$
+$$\frac{dz}{z} + \frac{dx}{x} = 0$$
+$$\ln{z} + \ln{x} = \ln{c}$$
+$$zx = c, z = \frac{c}{x}$$
+$$z' = \frac{c'x - c}{x^2}$$
+$$\frac{c'x - c}{x^2} + \frac{c}{x^2} = \frac{1}{x}$$
+$$\frac{c'}{x} = \frac{1}{x}$$
+$$c = x + c_1$$
+$$ z = \frac{x + c_1}{x}$$
+Подставим значение $z$ в уравнение (1):
+$$y = x + \frac{x}{x + c_1}$$
+Ответ: $y = x + \frac{x}{x + c_1}$
+\section*{№170} 
+$$y' - 2xy + y^2 = 5 - x^2$$
+Частное решение будет имеет вид: 
+$$y_1(x) = ax + b$$
+Подставим его в исходное уравнение:
+$$a - 2x(ax + b) + a^2x^2 + 2abx + b^2 = 5 - x^2$$
+$$a - 2ax^2 - 2xb + a^2x^2 + 2abx + b^2 - 5 + x^2 = 0 $$
+Получим систему уравнений:
+$$ \begin{cases}
+   -2a + a^2 + 1 = 0\\
+   -2b + 2ab = 0\\
+   a + b^2 - 5 = 0\\
+ \end{cases}$$
+Система имеет два решения:
+ $$ \begin{cases}
+   a = 1, b = 2\\
+   a = 1, b = -2\\
+ \end{cases}$$
+Пусть $a = 1, b = 2$, тогда $y_1(x) = x + 2$ - частное решение.
+Сделаем замену:
+$$y = x + 2 + \frac{1}{z} \eqno(2)$$
+Подставим замену в исходное уравнение:
+$$1 - \frac{z'}{z^2} - 2x\left ( x + 2 + \frac{1}{z} \right ) +  x^2+  4 + \frac{4}{z} + \frac{1}{z^2} + 2x\left(2 + \frac{1}{z} \right) = 5 - x^2$$
+$$1 - \frac{z'}{z^2} - 2x^2 - 4x - \frac{2x}{z} + x^2 + 4 + \frac{4}{z} + \frac{1}{z^2} + 4x + \frac{2x}{z} - 5 + x^2 = 0$$
+Получаем уравнение:
+$$z' - 4z - 1 = 0$$
+Решаем уравнение методом Лагранжа:
+$$z' - 4z = 0$$
+$$\frac{dz}{z} - 4dx = 0$$
+$$\ln{z} - 4x = c$$
+$$z = e^{4x}c$$
+$$z' = 4e^{4x}c + e^{4x}c'$$
+$$4e^{4x}c + e^{4x}c' - 4e^{4x}c - 1 = 0$$
+$$e^{4x}c' = 1$$
+$$c' = e^{-4x}$$
+$$c = -\frac{1}{4}e^{-4x} + c_1$$
+$$z = -\frac{1}{4} + e^{4x}c_1$$
+Подставим значение $z$ в уравнение (2):
+$$y = x + 2 + \frac{1}{-\frac{1}{4} + e^{4x}c_1} = x + 2 + \frac{4}{e^{4x}c - 1}$$
+Ответ: $y = x + 2 + \frac{4}{e^{4x}c - 1},  y = 2 + x$
+\section*{№ 171}
+$$y’+2ye^x-y^2=e^x(e^x+1)$$
+Частное решение имеет вид:
+$$y_1(x)=e^x+b$$
+Подставим его в исходное уравнение:
+$$e^x+2e^{2x}+2be^x-e^{2x}-2be^x-b^2=e^x(e^x+1)$$
+$$-b^2=0$$
+$$b=0$$
+Частное решение $y_1(x)$ имеет вид:
+$$y_1(x)=e^x$$
+Сделаем замену в исходном уравнении:
+$$y=y_1(x)+z=e^x+z \eqno(3)$$
+$$(e^x+z)'+2(e^x+z)e^x-(e^x+z)^2-=e^x(e^x+1)$$
+$$e^x+z'+2e^{2x}+2ze^x-e^{2x}-2ze^x-z^2=e^{2x}+e^x$$
+Получаем уравнение:
+$$z'=z^2$$
+Решаем его методом Лагранжа:
+$$z'-z^2=0,$$
+$$\frac{dz}{dx}-z^2=0,$$
+$$\frac{dz}{z^2}-\frac{dx}{1}=0,$$
+$$\frac{dz}{z^2}-\frac{dx}{1}=0,$$
+$$-\frac{1}{z}-x=c,$$
+$$z=-\frac{1}{z+c},$$
+Подставим значение $z$ в уравнение (3):
+$$y=e^x-\frac{1}{z+c}$$
+Ответ: $y=e^x-\frac{1}{z+c}$, $y=e^x$.
+\section*{№ 179}
+Общее уравнение имеет вид:
+$$y=\frac{c}{|x|^a} + \frac{1}{|x|^a} \int_0^x f(t)|t|^{a-1} d(|t|),$$ 
+где $d(|t|) = sign(t)dt$, $t\neq0$, или
+$$y=\frac{c}{|x|^a} + \frac{b}{a} +\frac{1}{|x|^a} \int_0^x \varepsilon(t)|t|^{a-1} d(|t|) \eqno(4),$$ 
+где $\varepsilon(t)\rightarrow0$ при $t\rightarrow0$ в силу условия. Вследствие оценки:
+$$\frac{1}{|x|^a}\left|\int_0^x \varepsilon(t)|t|^{a-1} d(|t|)\right|\leq\frac{1}{a}\sup_{0\leq t\leq x}|\varepsilon(t)|\rightarrow0, x\rightarrow0.$$
+Из (4) следует, что $\lim_{x\to 0}y$ существует и ограничен только при $c=0$ и равен $\frac{b}{a}$. Искомое решение уравнения имеет вид:
+$$y=\frac{1}{|x|^a} \int_0^x f(t)|t|^{a-1} d(|t|)$$
+\section*{№ 180}
+$$xy' + ay = f(x), a = const < 0, f \rightarrow b, x \rightarrow 0$$
+Общее решение уравнения имеет вид:
+$$y(x) = \frac{C}{|x|^a} + \frac{1}{|x|^a}\int f(x)|x|^{a-1}d(|x|)$$
+$$y(x) = \frac{C}{|x|^a} + \frac{b}{a} + \frac{1}{|x|^a}\int \varepsilon(x)|x|^{a-1}d(|x|)$$
+Пусть $\int \varepsilon(x)|x|^{a-1}d(|x|)$ - ограничен, тогда:
+$$\forall \; C \; \lim_{x\to 0}  y(x) = \frac{b}{a}$$
+Пусть $\int \varepsilon(x)|x|^{a-1}d(|x|)$ - не ограничен, тогда применим правило Лопиталя:
+$$\lim_{x\to 0} \frac{\int \varepsilon(x)|x|^{a-1}d(|x|)}{|x|^a} = \lim_{x\to0} \frac{\epsilon(x)|x|^{a-1}}{a|x|^{a-1}} = 0$$
+Таким образом,
+$$\lim_{x\to 0} y(x) = \frac{b}{a}, \; \forall \; C$$
+\section*{№ 181}
+Представим общее решение заданного уравнения в виде:
+$$x(t) = ce^{-t}+e^{-t}\int_{-\infty}^t f(\tau)e^{\tau}d\tau \eqno(5)$$
+Такое представление возможно в силу того, что:
+$$\left|\int_{-\infty}^t f(\tau)e^{\tau}d\tau \right| \leq Me^t\eqno(6), $$
+И, как следствие, несобственный интеграл сходится. Из неравенства (6) также следует, что функция $e^{-t}\int_{-\infty}^t f(\tau)e^{\tau}d\tau$ ограничена числом M $ \forall t \in (-\infty,+\infty)$. Таким образом необходимым и достаточным условием ограниченности функции x является равенство $c=0$. Искомое решение имеет вид:
+$$x(t)=e^{-t}\int_{-\infty}^t f(\tau)e^{\tau}d\tau \eqno(7)$$
+Пусть, далее:
+$$ \forall \tau \in (-\infty,+\infty) f(\tau +T)=f(\tau),\; T>0$$
+Тогда из (7) находим:
+$$x(t) = e^{-t} \int^t_{-\infty} f(\tau + T)e^\tau d\tau = e^{-(t+T)} \int^{t+T}_{-\infty} f({\tau}_1)e^{{\tau}_1}d{\tau}_1 = x(t+T),$$
+где $\tau_1=\tau+T$. Следовательно, x - периодическая функция.
+\end{document} \documentclass{article}
+\usepackage{amsmath}
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+\title{Дифференциальные уравненя}
+\author{Варвара Бородина}
+\date{Март 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{№169} 
+$$xy^\prime - (2x + 1)y + y^2 = -x^2$$
+Частное решение будет имеет вид: 
+$$y_1(x) = ax + b$$
+Подставим его в исходное уравнение:
+$$ax - (2x + 1)(ax + b) + (ax + b)^2 = -x^2$$
+$$ax - 2ax^2 - abx - ax - b + a^2x^2 + 2axb + b^2 = -x^2$$
+Получаем систему:
+$$ \begin{cases}
+   a^2 - 2a = -1\\
+   2ab - 2b = 0\\
+   b^2 - b = 0\\
+ \end{cases}$$
+Система имеет два решения:
+$$ \begin{cases}
+   a = 1, b = 0 \\
+   a = 1, b = 1
+ \end{cases}$$
+Пусть $a = 1, b = 0$. Тогда $y_1(x) = x$ - частное решение. Сделаем замену:
+$$y = x + \frac{1}{z} \eqno(1)$$
+Подставим замену в исходное уравнение:
+$$x\left(1 - \frac{z^\prime}{z^2} \right) - (2x + 1)\left(x + \frac{1}{z}\right) + \left(x + \frac{1}{z}\right)^2 = -x^2$$
+$$x - \frac{xz^\prime}{z^2} - 2x^2 - \frac{2x}{z} - x - \frac{1}{z} + x^2 + \frac{2x}{z} + \frac{1}{z^2} = -x^2$$
+Получаем уравнение:
+$$xz' + z - 1 = 0$$
+Решаем уравнение методом Лагранжа:
+$$xz' + z = 0$$
+$$z' + \frac{z}{x} = 0$$
+$$\frac{dz}{z} + \frac{dx}{x} = 0$$
+$$\ln{z} + \ln{x} = \ln{c}$$
+$$zx = c, z = \frac{c}{x}$$
+$$z' = \frac{c'x - c}{x^2}$$
+$$\frac{c'x - c}{x^2} + \frac{c}{x^2} = \frac{1}{x}$$
+$$\frac{c'}{x} = \frac{1}{x}$$
+$$c = x + c_1$$
+$$ z = \frac{x + c_1}{x}$$
+Подставим значение $z$ в уравнение (1):
+$$y = x + \frac{x}{x + c_1}$$
+Ответ: $y = x + \frac{x}{x + c_1}$
+\section*{№170} 
+$$y' - 2xy + y^2 = 5 - x^2$$
+Частное решение будет имеет вид: 
+$$y_1(x) = ax + b$$
+Подставим его в исходное уравнение:
+$$a - 2x(ax + b) + a^2x^2 + 2abx + b^2 = 5 - x^2$$
+$$a - 2ax^2 - 2xb + a^2x^2 + 2abx + b^2 - 5 + x^2 = 0 $$
+Получим систему уравнений:
+$$ \begin{cases}
+   -2a + a^2 + 1 = 0\\
+   -2b + 2ab = 0\\
+   a + b^2 - 5 = 0\\
+ \end{cases}$$
+Система имеет два решения:
+ $$ \begin{cases}
+   a = 1, b = 2\\
+   a = 1, b = -2\\
+ \end{cases}$$
+Пусть $a = 1, b = 2$, тогда $y_1(x) = x + 2$ - частное решение.
+Сделаем замену:
+$$y = x + 2 + \frac{1}{z} \eqno(2)$$
+Подставим замену в исходное уравнение:
+$$1 - \frac{z'}{z^2} - 2x\left ( x + 2 + \frac{1}{z} \right ) +  x^2+  4 + \frac{4}{z} + \frac{1}{z^2} + 2x\left(2 + \frac{1}{z} \right) = 5 - x^2$$
+$$1 - \frac{z'}{z^2} - 2x^2 - 4x - \frac{2x}{z} + x^2 + 4 + \frac{4}{z} + \frac{1}{z^2} + 4x + \frac{2x}{z} - 5 + x^2 = 0$$
+Получаем уравнение:
+$$z' - 4z - 1 = 0$$
+Решаем уравнение методом Лагранжа:
+$$z' - 4z = 0$$
+$$\frac{dz}{z} - 4dx = 0$$
+$$\ln{z} - 4x = c$$
+$$z = e^{4x}c$$
+$$z' = 4e^{4x}c + e^{4x}c'$$
+$$4e^{4x}c + e^{4x}c' - 4e^{4x}c - 1 = 0$$
+$$e^{4x}c' = 1$$
+$$c' = e^{-4x}$$
+$$c = -\frac{1}{4}e^{-4x} + c_1$$
+$$z = -\frac{1}{4} + e^{4x}c_1$$
+Подставим значение $z$ в уравнение (2):
+$$y = x + 2 + \frac{1}{-\frac{1}{4} + e^{4x}c_1} = x + 2 + \frac{4}{e^{4x}c - 1}$$
+Ответ: $y = x + 2 + \frac{4}{e^{4x}c - 1},  y = 2 + x$
+\section*{№ 171}
+$$y’+2ye^x-y^2=e^x(e^x+1)$$
+Частное решение имеет вид:
+$$y_1(x)=e^x+b$$
+Подставим его в исходное уравнение:
+$$e^x+2e^{2x}+2be^x-e^{2x}-2be^x-b^2=e^x(e^x+1)$$
+$$-b^2=0$$
+$$b=0$$
+Частное решение $y_1(x)$ имеет вид:
+$$y_1(x)=e^x$$
+Сделаем замену в исходном уравнении:
+$$y=y_1(x)+z=e^x+z \eqno(3)$$
+$$(e^x+z)'+2(e^x+z)e^x-(e^x+z)^2-=e^x(e^x+1)$$
+$$e^x+z'+2e^{2x}+2ze^x-e^{2x}-2ze^x-z^2=e^{2x}+e^x$$
+Получаем уравнение:
+$$z'=z^2$$
+Решаем его методом Лагранжа:
+$$z'-z^2=0,$$
+$$\frac{dz}{dx}-z^2=0,$$
+$$\frac{dz}{z^2}-\frac{dx}{1}=0,$$
+$$\frac{dz}{z^2}-\frac{dx}{1}=0,$$
+$$-\frac{1}{z}-x=c,$$
+$$z=-\frac{1}{z+c},$$
+Подставим значение $z$ в уравнение (3):
+$$y=e^x-\frac{1}{z+c}$$
+Ответ: $y=e^x-\frac{1}{z+c}$, $y=e^x$.
+\section*{№ 179}
+Общее уравнение имеет вид:
+$$y=\frac{c}{|x|^a} + \frac{1}{|x|^a} \int_0^x f(t)|t|^{a-1} d(|t|),$$ 
+где $d(|t|) = sign(t)dt$, $t\neq0$, или
+$$y=\frac{c}{|x|^a} + \frac{b}{a} +\frac{1}{|x|^a} \int_0^x \varepsilon(t)|t|^{a-1} d(|t|) \eqno(4),$$ 
+где $\varepsilon(t)\rightarrow0$ при $t\rightarrow0$ в силу условия. Вследствие оценки:
+$$\frac{1}{|x|^a}\left|\int_0^x \varepsilon(t)|t|^{a-1} d(|t|)\right|\leq\frac{1}{a}\sup_{0\leq t\leq x}|\varepsilon(t)|\rightarrow0, x\rightarrow0.$$
+Из (4) следует, что $\lim_{x\to 0}y$ существует и ограничен только при $c=0$ и равен $\frac{b}{a}$. Искомое решение уравнения имеет вид:
+$$y=\frac{1}{|x|^a} \int_0^x f(t)|t|^{a-1} d(|t|)$$
+\section*{№ 180}
+$$xy' + ay = f(x), a = const < 0, f \rightarrow b, x \rightarrow 0$$
+Общее решение уравнения имеет вид:
+$$y(x) = \frac{C}{|x|^a} + \frac{1}{|x|^a}\int f(x)|x|^{a-1}d(|x|)$$
+$$y(x) = \frac{C}{|x|^a} + \frac{b}{a} + \frac{1}{|x|^a}\int \varepsilon(x)|x|^{a-1}d(|x|)$$
+Пусть $\int \varepsilon(x)|x|^{a-1}d(|x|)$ - ограничен, тогда:
+$$\forall \; C \; \lim_{x\to 0}  y(x) = \frac{b}{a}$$
+Пусть $\int \varepsilon(x)|x|^{a-1}d(|x|)$ - не ограничен, тогда применим правило Лопиталя:
+$$\lim_{x\to 0} \frac{\int \varepsilon(x)|x|^{a-1}d(|x|)}{|x|^a} = \lim_{x\to0} \frac{\epsilon(x)|x|^{a-1}}{a|x|^{a-1}} = 0$$
+Таким образом,
+$$\lim_{x\to 0} y(x) = \frac{b}{a}, \; \forall \; C$$
+\section*{№ 181}
+Представим общее решение заданного уравнения в виде:
+$$x(t) = ce^{-t}+e^{-t}\int_{-\infty}^t f(\tau)e^{\tau}d\tau \eqno(5)$$
+Такое представление возможно в силу того, что:
+$$\left|\int_{-\infty}^t f(\tau)e^{\tau}d\tau \right| \leq Me^t\eqno(6), $$
+И, как следствие, несобственный интеграл сходится. Из неравенства (6) также следует, что функция $e^{-t}\int_{-\infty}^t f(\tau)e^{\tau}d\tau$ ограничена числом M $ \forall t \in (-\infty,+\infty)$. Таким образом необходимым и достаточным условием ограниченности функции x является равенство $c=0$. Искомое решение имеет вид:
+$$x(t)=e^{-t}\int_{-\infty}^t f(\tau)e^{\tau}d\tau \eqno(7)$$
+Пусть, далее:
+$$ \forall \tau \in (-\infty,+\infty) f(\tau +T)=f(\tau),\; T>0$$
+Тогда из (7) находим:
+$$x(t) = e^{-t} \int^t_{-\infty} f(\tau + T)e^\tau d\tau = e^{-(t+T)} \int^{t+T}_{-\infty} f({\tau}_1)e^{{\tau}_1}d{\tau}_1 = x(t+T),$$
+где $\tau_1=\tau+T$. Следовательно, x - периодическая функция.
+\end{document} 
