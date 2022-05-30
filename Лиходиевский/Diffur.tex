@@ -1,0 +1,194 @@
+\documentclass{article}
+\usepackage[russian]{babel}
+\usepackage{mathtext}
+\usepackage{amsmath}
+
+\title{ Лабораторная работа 3}
+\author{Лиходиевский Аркадий}
+\date{2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{Вариант 2}
+\section*{1) Проинтегрировать ур-ия Лагранжа и Клеро}
+\subsection*{a) $ 2xy' - y = cosy'$}
+
+\begin{equation*}
+    y = 2xy' - cosy' \text{ - уравнение Лагранжа}
+\end{equation*}
+
+\begin{equation*}
+    \text{ Замена } y' = p \Rightarrow dy = pdx, dy = 2pdx + 2xdp + \sin{(p)}dp
+\end{equation*}
+
+\begin{equation*}
+    2pdx + (2x + \sin{(p)})dp = pdx, -pdx = (2x + \sin{(p)})dp
+\end{equation*}
+
+\begin{equation*}
+    -px' = 2x + \sin{(p)} , x' + \frac{2}{p} = -\frac{\sin{(p)}}{p} \text{ - линейное, } p \ne 0
+\end{equation*}
+
+Решаем методом Лагранжа:
+
+\begin{equation*}
+    x' + \frac{2}{p} = 0, \frac{dx}{x} = -\frac{2}{p}dp, \ln{x} = \ln{p^{-2}}
+\end{equation*}
+
+\begin{equation*}
+    x = cp^{-2}
+\end{equation*}
+
+\begin{equation*}
+    c = c(x):    
+\end{equation*}
+
+\begin{equation*}
+  x' = c'p^{-2} - 2cp^{-3}
+\end{equation*}
+
+\begin{equation*}
+    c'p^{-2} - 2cp^{-3} + 2cp^{-2} = -\frac{\sin{(p)}}{p}, c' = -p\sin{(p)}
+\end{equation*}
+
+\begin{equation*}
+    c = \int{p\sin{(p)}dp} = p\cos{(p)} - \sin{(p)} + c_1
+\end{equation*}
+
+\begin{equation*}
+    x = \frac{1}{p^2}(p\cos{(p)} - \sin{(p)} + c_1) = \frac{1}{p}\cos{(p)} - \frac{1}{p^2}\sin{(p)} + \frac{c_1}{p^2}
+\end{equation*}
+
+\begin{equation*}
+    p = 0: y' = 0 \Rightarrow y = const \Rightarrow y = -1
+\end{equation*}
+\\
+Ответ:
+$
+    \begin{cases}
+    x = \frac{\cos{(p)}}{p} + \frac{c_1 - \sin{(p)}}{p^2} \\
+    y = \cos{(p)} + 2\frac{c_1 - \sin{(p)}}{p} \\
+    \end{cases} , y = -1
+$
+\subsection*{б) $y = xy' - (2 + (y')^2)$ - уравнение Клеро} 
+
+ \text{ Замена }  y' = p 
+
+\begin{equation*}
+   \Rightarrow  y = px - (2 + p^2)
+\end{equation*}
+
+\begin{equation*}
+    dy = xdp + pdx - 2pdp,  dy = pdx
+\end{equation*}
+
+\begin{equation*}
+    xdp +pdx - 2pdp = pdx \Rightarrow xpd - 2pdp = 0 \Rightarrow (x - 2p) dp = 0
+\end{equation*}
+
+\begin{equation*}
+    dp = 0 \Rightarrow  p = const
+\end{equation*}
+
+\begin{equation*}
+    y' = p \Rightarrow y = c_1x + c_2
+\end{equation*}
+
+\begin{equation*}
+    x = 2p
+\end{equation*}
+
+\begin{equation*}
+    y' = \frac{x}{2} \Rightarrow y = \frac{x^2}{4} + C
+\end{equation*}
+
+Ответ: 
+\begin{equation*}
+    y = \frac{x^2}{4} + C,
+    y = c_1x+c_2,  
+\end{equation*}
+
+\section*{2) Проинтегрировать уравнение}
+\begin{equation*}
+    2yy'' + (y')^2 = 0
+\end{equation*}
+
+Уравнение не содержащее явно x:
+\begin{equation*}
+    F(y, y', y'') = 0
+\end{equation*}
+
+Замена:
+\begin{equation*}
+    y' = p(y) 
+\end{equation*}
+\begin{equation*}
+    y'' = p'y' = p'p
+\end{equation*}
+\begin{equation*}
+    2ypp' + p^2 = 0, p' + \frac{p}{2y} = 0, p \ne 0 , y \ne 0
+\end{equation*}
+\begin{equation*}
+    \frac{dp}{p} = -\frac{dy}{2y} , \ln{(p)} = \ln{(cy^{-\frac{1}{2}})}
+\end{equation*}
+
+\begin{equation*}
+    p = c y^{-\frac{1}{2}}, y' = cy^{-\frac{1}{2}}, \frac{dy}{dx} = \frac{c}{y^{\frac{1}{2}}}
+\end{equation*}
+
+\begin{equation*}
+    y^{\frac{1}{2}}dy = cdx
+\end{equation*}
+
+\begin{equation*}
+    \frac{2}{3}y^{\frac{3}{2}} = c_1x + c_2
+\end{equation*}
+
+Особое решение:
+p = 0, y' = 0 \Rightarrow y = const
+Ответ: $ y = const$
+
+\section*{3) Понизить порядок ур-ия и указать тип и метод интегрирования полученного ур-ия}
+\begin{equation*}
+    (y'')^2 + y' = xy''
+\end{equation*}
+Замена:
+\begin{equation*}
+    y' = p \Rightarrow y'' = p'
+\end{equation*}
+\begin{equation*}
+    (p')^2 + p = xp
+\end{equation*}
+
+\begin{equation*}
+   p = xp' - (p')^2 \text{ - уравнение Клеро}
+\end{equation*}
+
+Выполним замену: p' = t и решаем как в номере 1)
+
+\section*{4) Проинтегрировать ур-ие в точных призводных}
+\begin{equation*}
+    yy'' + (y')^2 = 1
+\end{equation*}
+Подобрали первообразные слева и справа
+\begin{equation*}
+    yy' = x + c
+\end{equation*}
+\begin{equation*}
+    y' = \frac{x + c}{y}, \frac{dy}{dx} = \frac{x + c}{y}
+\end{equation*}
+\begin{equation*}
+    ydy = (x + c) dx
+\end{equation*}
+\begin{equation*}
+    \frac{y^2}{2} = \frac{x^2}{2} + c_1x + c_2
+\end{equation*}
+
+
+Ответ:  $y^2 = x^2 + c_1x + c_2
+
+
+
+\end{document}
