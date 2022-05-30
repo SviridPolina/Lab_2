@@ -1,0 +1,359 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{letltxmacro}
+\usepackage[12pt]{extsizes}
+
+\title{Differential equations, 1 lab}
+
+\author{Likhodievskiy Arkady}
+\date{2022}
+
+\begin{document}
+\maketitle
+\newpage
+
+169 - 171 Having found a particular solution by selection, bring this Riccati equation to the Bernoulli equations and solve them
+
+\begin{flushleft}
+{\bf 169 } $xy'-(2x+1)y+y^2=-x^2$
+
+\end{flushleft}
+
+
+\begin{left} 
+\begin{spacing}{1.5}
+$xy'-(2x+1)y+y^2=-x^2$
+
+$y_0 = x - $privat desision
+\end{spacing}
+\end{left}
+Examination:
+\begin{left} 
+\begin{spacing}{1.5}
+$x -(2x+1)x+x^2=-x^2$
+
+$-x^2=-x^2$
+\end{spacing}
+\end{left}
+Replacement:
+\begin{left} 
+\begin{spacing}{2.5}
+$y=U+y_0 = U+x$
+
+$\displaystyle y'=U'+1=\frac{2x+1}{x}y-\frac{y^2}{x}-x$
+
+$\displaystyle U'=-1+\frac{2x+1}{x}(U+x)-\frac{(y+x^2)}{x}-x$
+
+$\displaystyle U'=-1++2U+2x+\frac{U}{x}+1-\frac{U^2}{x}-x-2U-x$
+
+\fbox{
+$\displaystyle U'=-\frac{U^2}{x}+\frac{U}{x}-$ Bernoulli equation
+}
+\end{spacing}
+\end{left}
+Replacement for Bernoulli's equation:
+\begin{left}
+\begin{spacing}{2.2}
+$m=2; $ $\displaystyle \upsilon=U^{1-m}=\frac{1}{U}$
+
+$\displaystyle U=\frac{1}{\upsilon}$
+
+$\displaystyle U'=-\frac{\upsilon'}{\upsilon^2}$
+
+$\displaystyle -\frac{\upsilon'}{\upsilon^2}=-\frac{1}{\upsilon^2 x}+\frac{1}{\upsilon x}$
+
+$\displaystyle -\upsilon'=-\frac{1}{x}+\frac{\upsilon}{x}$
+
+$\displaystyle -\upsilon'-\frac{\upsilon}{x}=0$
+
+$\displaystyle -\upsilon'=\frac{\upsilon}{x}$
+
+$\displaystyle -\frac{d\upsilon}{\upsilon}=\frac{dx}{x}$
+
+$\ln(\upsilon)=-\ln(Cx)$
+
+$\displaystyle \upsilon=C\frac{1}{x}$
+
+$\displaystyle \upsilon'=C'\frac{1}{x}-\frac{1}{x^2}C$
+
+$\displaystyle C'\frac{1}{x}-\frac{1}{x^2}C+C\frac{1}{x^2}=\frac{1}{x}$
+
+$C'=1 \Rightarrow C= \widetilde{C}+x$
+
+$\displaystyle \upsilon=\frac{\widetilde{C}}{x}+1$
+
+$\displaystyle U=\frac{x}{\widetilde{C}+x}$
+
+\fbox{
+$\displaystyle y=x+\frac{x}{\widetilde{C}+x}$
+}
+\end{spacing}
+\end{left}
+
+\begin{flushleft}
+{\bf 170 } $y'-2xy+y^2=5-x^2$
+
+
+\end{flushleft}
+privat desision:
+\begin{left}
+\begin{spacing}{1.5}
+$y=ax+b$
+
+$a-2ax^2-2xb+a^2x^2+b^2+2axb=5-x^2$
+\begin{equation*}
+ \begin{cases}
+   a^2-2a=-1 \Rightarrow (a-1)^2=0 \Rightarrow a=1
+   \\
+   -2b+2ab=0
+   \\
+   a+b^2=5 \Rightarrow b^2=5-a=5-1=4 \Rightarrow b=\pm2
+ \end{cases}
+\end{equation*}
+
+$y_0=x+2 - $privat desision
+\end{spacing}
+\end{left}
+Replacement:
+\begin{left} 
+\begin{spacing}{1.8}
+$y=U+x+2$
+
+$y'=U'+1=5-x^2+2xy-y^2$
+
+$y'=5-x^2+2xU+2x^2+4x-U^2-x^2-4-2Ux-4x-4U$
+
+\fbox{
+$U'+1=-U^2-4U-$ Bernoulli equation
+}
+\end{spacing}
+\end{left}
+
+Replacement for Bernoulli's equation:
+\begin{left}
+\begin{spacing}{2.2}
+$m=2; $ $\displaystyle \upsilon=U^{1-m}=\frac{1}{U}$
+
+$\displaystyle U=\frac{1}{\upsilon}$
+
+$\displaystyle U'=-\frac{\upsilon'}{\upsilon^2}$
+
+$\displaystyle -\frac{\upsilon'}{\upsilon^2}=-\frac{1}{\upsilon^2}-\frac{4}{\upsilon}$
+
+$-\upsilon'=-1-4\upsilon$
+
+$-\upsilon'+4\upsilon=0$
+
+$\displaystyle \frac{d\upsilon}{\upsilon}=4dx$
+
+$ln(\upsilon)=4ln(Ce^x)$
+
+$\upsilon=Ce^{4x}$
+
+$\upsilon'=C'e^{4x}+4Ce^{4x}$
+
+$-C'e^{4x}-4Ce^{4x}=-1-4Ce^{4x}$
+
+$\displaystyle C'=e^{-4x} \Rightarrow C=-\frac{1}{4}e^{-4x}+\widetilde{C}$
+
+$\displaystyle \upsilon=-\frac{1}{4}+\widetilde{C}e^{4x}$
+
+$\displaystyle U=\frac{1}{-\frac{1}{4}+\widetilde{C}e^{4x}}$
+
+\fbox{
+$\displaystyle y=x+2+\frac{4}{\widetilde{C}e^{4x}-1}$ 
+}
+\end{spacing}
+\end{left}
+
+\begin{flushleft}
+{\bf 171 } $y'+2ye^x-y^2=e^{2x}+e^x$
+
+\end{flushleft}
+privat desision:
+\begin{left}
+\begin{spacing}{1.5}
+$y=e^x+a$
+
+$e^x+2e^{2x}+2e^xa-e^{2x}-a^2-2e^xa=e^{2x}+e^x$
+
+$-a^2=0 \Rightarrow a=0$
+
+$y_0=e^x - $privat desision
+\end{spacing}
+\end{left}
+Replacement:
+\begin{left}
+\begin{spacing}{1.5}
+$y=y_0+U=e^x+U$
+
+$y'=U'+e^x$
+
+$U'+e^x=e^{2x}+e^x-2e^{2x}-2Ue^x+e^{2x}+U^2+2Ue^x$
+
+\fbox{
+$U'=U^2-$ Bernoulli equation
+}
+\end{spacing}
+\end{left}
+Replacement for Bernoulli's equation:
+\begin{left}
+\begin{spacing}{1.8}
+$m=2; $ $\displaystyle \upsilon=U^{1-m}=\frac{1}{U}$
+
+$\displaystyle U=\frac{1}{\upsilon}$
+
+$\displaystyle U'=-\frac{\upsilon'}{\upsilon^2}$
+
+$\displaystyle -\frac{\upsilon'}{\upsilon^2}=\frac{1}{\upsilon^2}$
+
+$-\upsilon'=1 \Rightarrow \upsilon'=-1 \Rightarrow \upsilon=-x+C$
+
+$\displaystyle U=\frac{1}{-x+C}$
+
+\fbox{
+$\displaystyle y=e^x-\frac{1}{x-C}=e^x-\frac{1}{x+\widetilde{C}}$
+}
+\end{spacing}
+\end{left}
+
+\begin{flushleft}
+{\bf 179 } $ay'+ay=f(x); $ $a=const>0; $ $\lim\limits_{x \to 0} f(x) = b$
+
+\end{flushleft}
+Show that only one solution remains bounded at $x \rightarrow 0$ and find the limit of this solution at $x \rightarrow 0$
+
+\begin{left}
+\begin{spacing}{1.5}
+$ay'+ay=f(x)$
+
+$p(x)y+q(x)+r(x)y'=0$
+
+$r(x)=x$
+
+$p(x)=a$
+
+$q(x)=f(x)$
+
+\end{spacing}
+\end{left}
+Common decision:
+\begin{left}
+\begin{spacing}{1.8}
+$\displaystyle y= e^{-\int\limits _{x_0}^x \frac{p(\tau)}{r(\tau)}\,d\tau} (C+\int\limits _{x_0}^x e^{\int\limits _{t_0}^t\frac{p(\tau)}{r(\tau)}\,d\tau}\frac{q(t)}{r(t)}\,dt)$
+
+$\displaystyle y= e^{-\int\limits _{x_0}^x \frac{a}{\tau}\,d\tau} (C+\int\limits _{x_0}^x e^{\int\limits _{t_0}^t\frac{a}{\tau}\,d\tau}\frac{f(t)}{t}\,dt)$
+\end{spacing}
+\end{left}
+$x_0=0$
+\begin{left}
+\begin{spacing}{3}
+$\displaystyle y= e^{-aln(x)} (C+\int\limits _0^x \frac{1}{t^{-a}}\frac{f(t)}{t}\,dt)$
+
+$\displaystyle y= \frac{1}{x^a} (C+\int\limits _0^x f(t)t^{a-1}\,dt)$
+
+$\displaystyle \lim\limits_{x \to 0} \frac{C}{x^a} = \infty \Rightarrow C=0$
+
+$\displaystyle y= \frac{1}{x^a}\int\limits _0^x f(t)t^{a-1}\,dt$
+
+$\displaystyle \lim\limits_{x \to 0}y= \lim\limits_{x \to 0}\frac{1}{x^a}\int\limits _0^x f(t)t^{a-1}\,dt$
+
+$\displaystyle \lim\limits_{x \to 0}y= \lim\limits_{x \to 0}\frac{1}{x^a}\int\limits _0^x bt^{a-1}\,dt$
+
+$\displaystyle \lim\limits_{x \to 0}y= \lim\limits_{x \to 0}\frac{1}{x^a}\frac{b}{a}x^a$
+
+\fbox{
+$\displaystyle \lim\limits_{x \to 0}y= \frac{b}{a}$
+}
+\end{spacing}
+\end{left}
+\begin{flushleft}
+{\bf 180 } $ay'+ay=f(x); $ $a=const<0; $ $\lim\limits_{x \to 0} f(x) = b$
+
+\end{flushleft}
+Show that all solutions of this equation have the same finite limit at $x \rightarrow 0$ . Find him.
+
+From 179 follows the general solution of the equation:
+\begin{left}
+\begin{spacing}{3}
+$\displaystyle y= \frac{1}{x^a} (C+\int\limits _0^x f(t)t^{a-1}\,dt)$
+
+$\displaystyle y= \frac{b}{a}+\frac{1}{x^a} (C+\int\limits _0^x \epsilon(t)t^{a-1}\,dt)$
+
+$\displaystyle \int\limits _0^x \epsilon(t)t^{a-1}\,dt$  limited $\forall C \Rightarrow$ \fbox{
+$\lim\limits_{x \to 0}y= \frac{b}{a}$
+}
+
+$\displaystyle \int\limits _0^x \epsilon(t)t^{a-1}\,dt$  is not limited $\Rightarrow$
+
+$\displaystyle \lim\limits_{x \to 0}\frac{C+\int\limits _0^x \epsilon(t)t^{a-1}\,dt}{x^a}=0+\frac{\int\limits _0^x \epsilon(t)t^{a-1}\,dt}{x^a}$
+
+$\displaystyle \lim\limits_{x \to 0}\frac{\epsilon(x)x^a}{ax^a}=0$
+
+\fbox{
+$\lim\limits_{x \to 0}y= \frac{b}{a}$ $ \forall C$
+}
+\end{spacing}
+\end{left}
+
+\begin{flushleft}
+{\bf 181 } $\displaystyle \frac{dx}{dt}+x=f(t); $ $f(t)$- continuous function $|f(f)|\leq M$ at$ -\infty<t<+\infty$
+
+\end{flushleft}
+Show that the equation has one bounded solution. Find this solution. Show that the found solution is periodic if the function $f(x)$ is periodic.
+\begin{left}
+\begin{spacing}{2}
+$x'+x=f(t)-$ first-order linear differential equation with constant coefficients of the form: $x'-\lambda x=f(t)$
+
+$\lambda=-1$
+\end{spacing}
+\end{left}
+Common decision:
+\begin{left}
+\begin{spacing}{2}
+$\displaystyle x(t)=e^{\lambda t}(C+\int\limits _s^t f(\tau)e^{-\lambda\tau}\,d\tau)$
+
+$\displaystyle x(t)=e^{-t}C+e^{-t}\int\limits _{-\infty}^t f(\tau)e^{\tau}\,d\tau$
+
+$\displaystyle |\int\limits _{-\infty}^t f(\tau)e^{\tau}\,d\tau| \leq Me^t$ 
+
+$\displaystyle e^{-t}\int\limits _{-\infty}^t f(\tau)e^{\tau}\,d\tau \leq M \Rightarrow C=0$ $ \forall t -\infty<t<+\infty$ 
+
+\fbox{
+$\displaystyle x(t)=e^{-t}\int\limits _{-\infty}^t f(\tau)e^{\tau}\,d\tau$
+}
+\end{spacing}
+\end{left}
+\begin{flushleft}
+Periodicity:
+
+T-period
+\end{flushleft}
+\begin{left}
+\begin{spacing}{1}
+$\displaystyle x(t)=e^{-t}\int\limits _{-\infty}^t f(\tau+T)e^{\tau}\,d\tau$
+\end{spacing}
+\end{left}
+\begin{left}
+\begin{spacing}{1.5}
+$\left[
+  \begin{array}{ccc}
+     \tau + T = z \\
+     d\tau = dz \\
+  \end{array}
+\right]$
+\end{spacing}
+\end{left}
+
+\begin{left}
+\begin{spacing}{3}
+$\displaystyle x(t)=e^{-t}\int\limits _{-\infty}^{t+T} f(z)e^{z-T}\,dz$
+
+$\displaystyle x(t-T)=e^{-t}\int\limits _{-\infty}^{t+T} f(z)e^{z}\,dz = x(t+T)$
+\end{spacing}
+\end{left}
+
+
